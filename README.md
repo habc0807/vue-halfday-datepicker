@@ -1,50 +1,82 @@
-### vue-halfday-datepicker 
+# vue-halfday-datepicker
 
-`vue-halfday-datepicker` 插件是一个简单的半天日期选择器。
+> 一个基于vue的日期选择器
 
-### 插件的安装
+## 特点
 
-#### NPM/CNPM/YARN
+- 适用于移动端的日期选择器
+- 只能进行上下午的日期选择器
 
-```javascript
-npm i vue-halfday-datepicker 
+## 安装
+
+```
+npm i vue-halfday-datepicker
+cnpm i vue-halfday-datepicker
+yarn add vue-halfday-datepicker
 ```
 
-#### CNPM
+## 引入和注册 
+在单页面应用的入口文件里引入和注册
 
 ```javascript
-cnpm i vue-halfday-datepicker 
+import VueHalfdayDatepicker from 'vue-halfday-datepicker'
+Vue.use(VueHalfdayDatepicker)
 ```
 
-#### YARN
+## 使用 
 
-```javascript
-yarn add vue-halfday-datepicker 
+``` vue
+<template>
+  <div id="app">
+    <h2>一个基于vue的日期选择器Demo</h2>
+
+    <div class="pickerSelect" @click="onOpenPicker">{{ pickerValue }}</div>
+    <vue-halfday-datepicker :show="isShow" @onConfirm="onConfirmHandle" @onCancel="onCancelHandle"/>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app',
+  data () {
+    return {
+      isShow: false,
+      pickerValue: '测试一下：请选择'
+    }
+  },
+  methods: {
+    onOpenPicker(e) {
+        this.isShow = true
+    },
+    onConfirmHandle(v) {
+        this.value = v
+        this.pickerValue = v
+        this.isShow = false
+    },
+    onCancelHandle(e) {
+        this.isShow = false
+    }
+  },
+}
+</script>
+<style>
+</style>
 ```
 
-### 引入插件
 
-```javascript
-import Vue from 'vue';
-import VueHalfdayDatepicker from 'vue-halfday-datepicker';
-
-Vue.use(VueHalfdayDatepicker);
+## 注意
+需要在跟目录下添加 `.babelrc` 文件
+```
+{
+  "presets": [
+    ["env", { "modules": false }]
+  ],
+  "plugins": [["component", [
+    {
+      "libraryName": "mint-ui",
+      "style": true
+    }
+  ]]]
+}
 ```
 
-### 基本用法
-
-#### vue-halfday-datepicker 组件的用法
-
-
-
-### DEOM地址
-
-[demo演示地址](https://habc0807.github.io/vue-halfday-datepicker/dist/index.html)
-
-### Author && Github
-
-[habc0807](https://github.com/habc0807)
-
-### NPM地址
-
-[npm](https://www.npmjs.com/package/vue-halfday-datepicker)
