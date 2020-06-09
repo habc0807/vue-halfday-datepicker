@@ -10,9 +10,9 @@
 ## 安装
 
 ```
-npm i vue-halfday-datepicker
-cnpm i vue-halfday-datepicker
-yarn add vue-halfday-datepicker
+npm i vue-halfday-datepicker -D
+cnpm i vue-halfday-datepicker -D
+yarn add vue-halfday-datepicker -D
 ```
 
 ## 引入和注册 
@@ -65,7 +65,7 @@ export default {
 
 
 ## 注意
-需要在跟目录下添加 `.babelrc` 文件
+需要在根目录下添加 `.babelrc` 文件
 ```
 {
   "presets": [
@@ -79,4 +79,3 @@ export default {
   ]]]
 }
 ```
-

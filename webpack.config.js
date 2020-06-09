@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/main.js', // 页面的入口
@@ -11,6 +12,9 @@ module.exports = {
     // filename: 'vue-halfday-datepicker.js', // 插件的生成文件
     libraryTarget: 'umd',
     umdNamedDefine: true
+  },
+  externals: {
+    vue: 'Vue'
   },
   module: {
     rules: [
@@ -57,7 +61,10 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  // plugins: [
+  //   new BundleAnalyzerPlugin()
+  // ]
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -80,3 +87,5 @@ if (process.env.NODE_ENV === 'production') {
     })
   ])
 }
+
+

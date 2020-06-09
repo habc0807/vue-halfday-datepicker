@@ -1,4 +1,3 @@
-// import Vue from 'vue'
 import VueHalfdayDatepicker from './VueHalfdayDatepicker.vue'
 
 const datePicker = {

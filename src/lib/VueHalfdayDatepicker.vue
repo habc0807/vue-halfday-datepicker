@@ -21,10 +21,8 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import { Picker } from 'mint-ui'
 import 'mint-ui/lib/style.css'
-Vue.component(Picker.name, Picker);
 
 import {
     yearsArr,
@@ -44,6 +42,9 @@ export default {
             required: true,
             default: () => null,
         }
+    },
+    components: {
+        [Picker.name]: Picker,
     },
     data: function() {
         return {
