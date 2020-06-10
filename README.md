@@ -62,20 +62,3 @@ export default {
 <style>
 </style>
 ```
-
-
-## 注意
-需要在根目录下添加 `.babelrc` 文件
-```
-{
-  "presets": [
-    ["env", { "modules": false }]
-  ],
-  "plugins": [["component", [
-    {
-      "libraryName": "mint-ui",
-      "style": true
-    }
-  ]]]
-}
-```
