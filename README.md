@@ -1,11 +1,16 @@
 # vue-halfday-datepicker
 
-> 一个基于vue的日期选择器
+> 一个基于vue的带上、下午的移动端日期选择器
+
+## Demo
+
+[在线地址](https://habc0807.github.io/vue-halfday-datepicker/index.html)
 
 ## 特点
 
-- 适用于移动端的日期选择器
-- 只能进行上下午的日期选择器
+- 移动端
+- 带上、下午
+- vue插件
 
 ## 安装
 
