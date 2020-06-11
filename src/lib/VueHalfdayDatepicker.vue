@@ -137,7 +137,7 @@ export default {
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.7);
-        filter: blur(20px);
+        /* filter: blur(20px); */
         overflow: hidden;
     }
     .select-date-container {
