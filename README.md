@@ -6,6 +6,10 @@
 
 [在线地址](https://habc0807.github.io/vue-halfday-datepicker/index.html)
 
+## Demo
+
+[在线地址](https://habc0807.github.io/vue-halfday-datepicker/index.html)
+
 ## 特点
 
 - 移动端
