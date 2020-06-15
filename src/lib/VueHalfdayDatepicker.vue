@@ -31,7 +31,9 @@ import {
     noonArr,
     defalutYear,
     defalutMonth,
-    defalutDay
+    defalutDay,
+    getMaxDay,
+    daysArrHandle
 } from '../tools/makeData.js'
 
 export default {
@@ -49,6 +51,9 @@ export default {
     data: function() {
         return {
             pickerValue: '',
+            values: [],
+            curYear: defalutYear,
+            curMonth: defalutMonth,
             slots: [
                 {
                     flex: 1,
@@ -81,6 +86,22 @@ export default {
             ],
         }
     },
+    watch: {
+        curYear: {
+            handler: function (val, oldVal) {
+                this.$set(this.slots[2], 'values', daysArrHandle(getMaxDay(val, this.curMonth)))
+            },
+            deep: true,
+            immediate: true
+        },
+        defalutMonth: {
+            handler: function (val, oldVal) {
+                this.$set(this.slots[2], 'values', daysArrHandle(getMaxDay(this.curYear, val)))
+            },
+            deep: true,
+            immediate: true
+        }
+    },
     methods: {
         onOpenPicker(e) {
             this.$emit('onOpenPicker')
@@ -93,6 +114,11 @@ export default {
         },
         /** picker改变的处理 */
         onValuesChange(picker, values) {
+            this.values = values
+
+            this.curYear = values[0]
+            this.curMonth = values[1]
+
             // 按照时间组合字符串
             const pickerValue = values[0] + '-' + values[1] + '-' + values[2] + ' ' + values[3]
             this.pickerValue = pickerValue

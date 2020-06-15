@@ -47,6 +47,15 @@ for(let i = 1; i <= days; i++) {
   daysArr.push(addZero(i))
 }
 
+function daysArrHandle (currentYear, currentMonth) {
+    const days = getMaxDay(currentYear, currentMonth)
+    const daysArr = []
+    for(let i = 1; i <= days; i++) {
+      daysArr.push(addZero(i))
+    }
+    return daysArr
+}
+
 /**
  * 默认当前的年月日，在picker中的默认位置
  */
@@ -185,5 +194,7 @@ export {
   noonArr,
   defalutYear,
   defalutMonth,
-  defalutDay
+  defalutDay,
+  getMaxDay,
+  daysArrHandle
 }
