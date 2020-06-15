@@ -47,8 +47,7 @@ for(let i = 1; i <= days; i++) {
   daysArr.push(addZero(i))
 }
 
-function daysArrHandle (currentYear, currentMonth) {
-    const days = getMaxDay(currentYear, currentMonth)
+function daysArrHandle (days) {
     const daysArr = []
     for(let i = 1; i <= days; i++) {
       daysArr.push(addZero(i))

@@ -52,8 +52,9 @@ export default {
         return {
             pickerValue: '',
             values: [],
-            curYear: defalutYear,
-            curMonth: defalutMonth,
+            curYear: yearsArr[defalutYear],
+            curMonth: monthsArr[defalutMonth],
+            curDay: daysArr[defalutDay],
             slots: [
                 {
                     flex: 1,
@@ -94,7 +95,7 @@ export default {
             deep: true,
             immediate: true
         },
-        defalutMonth: {
+        curMonth: {
             handler: function (val, oldVal) {
                 this.$set(this.slots[2], 'values', daysArrHandle(getMaxDay(this.curYear, val)))
             },
@@ -118,6 +119,7 @@ export default {
 
             this.curYear = values[0]
             this.curMonth = values[1]
+            this.curDay = values[2]
 
             // 按照时间组合字符串
             const pickerValue = values[0] + '-' + values[1] + '-' + values[2] + ' ' + values[3]
