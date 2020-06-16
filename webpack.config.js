@@ -8,8 +8,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    // filename: 'build.js', // 页面的生成文件
-    filename: 'vue-halfday-datepicker.js', // 插件的生成文件
+    filename: 'build.js', // 页面的生成文件
+    // filename: 'vue-halfday-datepicker.js', // 插件的生成文件
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -77,7 +77,7 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
       compress: {
         warnings: false
       }

@@ -2,7 +2,7 @@
   "name": "vue-halfday-datepicker",
   "description": "A date picker",
   "main": "dist/vue-halfday-datepicker.js",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "author": "habc0807 <gao0807@foxmail.com>",
   "license": "MIT",
   "private": false,
